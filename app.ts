@@ -1,0 +1,1 @@
+console.log('this .ts file will not be compiled');
