@@ -121,7 +121,7 @@ console.log(someDoc.name);
 interface Resource <T>{
     uid: number;
     resourceName: string;
-    data: any;
+    data: T;
 }
 
 const someDocThree: Resource<object> = {
