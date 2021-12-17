@@ -1,0 +1,26 @@
+{
+  "name": "learning-typescript",
+  "version": "1.0.0",
+  "description": "This repository will contain codes throughout my TypeScript learning process.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/AydinAlptug/learning-typescript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AydinAlptug/learning-typescript/issues"
+  },
+  "homepage": "https://github.com/AydinAlptug/learning-typescript#readme",
+  "devDependencies": {
+    "@types/jest": "^27.0.3",
+    "jest": "^27.4.5",
+    "ts-jest": "^27.1.2",
+    "typescript": "^4.5.4"
+  }
+}
