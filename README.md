@@ -34,4 +34,10 @@ This repository will contain codes throughout my TypeScript learning process.
 
 ## Data Structures
 
+[ts-jest](https://github.com/kulshekhar/ts-jest) is used for unit testing. I benefit from [this cheetsheet](https://devhints.io/jest). Tests not fit the best practices, but I am open for any suggestion: yusufaydinceng@gmail.com
+
+1. [Singly Linked List](https://github.com/AydinAlptug/learning-typescript/tree/data-structures/data-structures/LinkedList) 
+    - [Tests](https://github.com/AydinAlptug/learning-typescript/tree/data-structures/data-structures/LinkedList/UnitTest)
+
+
 ## Design Patterns
