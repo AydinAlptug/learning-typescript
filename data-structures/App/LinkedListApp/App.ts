@@ -16,3 +16,5 @@ console.log(firstList.peekHead());
 console.log(firstList.peekTail());
 
 console.log(firstList.getLength())
+
+console.log(firstList.toString());

@@ -19,6 +19,9 @@ var LinkedListNode = /** @class */ (function () {
     LinkedListNode.prototype.setNextNode = function (nextNode) {
         this.next = nextNode;
     };
+    LinkedListNode.prototype.toString = function (custom) {
+        return custom ? custom(this.data) : "" + this.data;
+    };
     return LinkedListNode;
 }());
 exports.LinkedListNode = LinkedListNode;

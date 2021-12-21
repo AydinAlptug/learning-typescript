@@ -70,7 +70,7 @@ export class LinkedList<T> implements ILinkedList<T>{
         if(newEntry){
             let newNode: LinkedListNode<T> = new LinkedListNode<T>(newEntry);
 
-            if(!this.headNode){
+            if(!this.headNode){ // this block should be replaced with addHead
                 this.headNode = newNode;
                 this.size++;
                 return true;
@@ -179,7 +179,7 @@ export class LinkedList<T> implements ILinkedList<T>{
         return this.size;
     }
 
-    indexOf(entry: T): number{
+    indexOf(entry: T): number{ // start from 0
         if(!this.headNode) 
             return -1;
 
@@ -202,14 +202,44 @@ export class LinkedList<T> implements ILinkedList<T>{
 
     // ----------------------------------------------- Other ----------------------------------------------- //
 
+    toString(custom?: Function): string {
+        let currentNode = this.headNode;
+        let result: string = '';
+
+        while(currentNode != null){
+            if(custom)
+                result += currentNode.toString(custom) + ' ';
+            else
+                result += currentNode.toString() + ' ';
+                
+            currentNode = currentNode.getNextNode() as LinkedListNode<T>;
+        }
+
+        return result;
+    }
+
     toArray(): T[]  | null{
-        throw new Error("Method not implemented.");
+        const array = [];
+        let currentNode = this.headNode;
+
+        while(currentNode != null){
+            array.push(currentNode.getData());
+            currentNode = currentNode.getNextNode() as LinkedListNode<T>;
+        }
+
+        return array.length > 0 ? array : null;
     }
+
     fromArray(arr: T[]): ILinkedList<T> {
-        throw new Error("Method not implemented.");
+        arr.forEach(elem => {
+           this.addTail(elem); 
+        });
+
+        return this;
     }
+
     getAsReversed(): ILinkedList<T>  | null{
-        throw new Error("Method not implemented.");
+       throw new Error('Not implemented');
     }
     
 }

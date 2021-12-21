@@ -47,7 +47,7 @@ var LinkedList = /** @class */ (function () {
     LinkedList.prototype.addTail = function (newEntry) {
         if (newEntry) {
             var newNode = new LinkedListNode_js_1.LinkedListNode(newEntry);
-            if (!this.headNode) {
+            if (!this.headNode) { // this block should be replaced with addHead
                 this.headNode = newNode;
                 this.size++;
                 return true;
@@ -142,14 +142,36 @@ var LinkedList = /** @class */ (function () {
         return this.indexOf(entry) != -1;
     };
     // ----------------------------------------------- Other ----------------------------------------------- //
+    LinkedList.prototype.toString = function (custom) {
+        var currentNode = this.headNode;
+        var result = '';
+        while (currentNode != null) {
+            if (custom)
+                result += currentNode.toString(custom) + ' ';
+            else
+                result += currentNode.toString() + ' ';
+            currentNode = currentNode.getNextNode();
+        }
+        return result;
+    };
     LinkedList.prototype.toArray = function () {
-        throw new Error("Method not implemented.");
+        var array = [];
+        var currentNode = this.headNode;
+        while (currentNode != null) {
+            array.push(currentNode.getData());
+            currentNode = currentNode.getNextNode();
+        }
+        return array.length > 0 ? array : null;
     };
     LinkedList.prototype.fromArray = function (arr) {
-        throw new Error("Method not implemented.");
+        var _this = this;
+        arr.forEach(function (elem) {
+            _this.addTail(elem);
+        });
+        return this;
     };
     LinkedList.prototype.getAsReversed = function () {
-        throw new Error("Method not implemented.");
+        throw new Error('Not implemented');
     };
     return LinkedList;
 }());

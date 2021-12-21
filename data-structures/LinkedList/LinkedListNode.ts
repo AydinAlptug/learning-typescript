@@ -21,4 +21,8 @@ export class LinkedListNode<T> {
         this.next = nextNode;
     }
 
+    toString(custom?: Function ): string {
+        return custom ? custom(this.data) : `${this.data}`;
+    }
+
 }
